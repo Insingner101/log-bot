@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-intents = discord.Intents.all()  # Enable all intents
+intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
@@ -11,9 +11,9 @@ async def on_ready():
 
 @bot.event
 async def on_member_remove(member):
-    mod_log_channel_id = 1212741983328542761  # Replace with your mod-log channel ID
+    mod_log_channel_id = 1212741983328542761
 
-    # Log Kick
+    
     if member.guild.me.guild_permissions.view_audit_log:
         async for entry in member.guild.audit_logs(limit=1, action=discord.AuditLogAction.kick):
             if entry.target == member:
@@ -27,9 +27,9 @@ async def on_member_remove(member):
 
 @bot.event
 async def on_member_ban(guild, user):
-    mod_log_channel_id = 1212741983328542761  # Replace with your mod-log channel ID
+    mod_log_channel_id = 1212741983328542761  
 
-    # Log Ban
+    
     if guild.me.guild_permissions.view_audit_log:
         async for entry in guild.audit_logs(limit=1, action=discord.AuditLogAction.ban):
             if entry.target == user:
@@ -43,9 +43,9 @@ async def on_member_ban(guild, user):
 
 @bot.event
 async def on_member_unban(guild, user):
-    mod_log_channel_id = 1212741983328542761  # Replace with your mod-log channel ID
+    mod_log_channel_id = 1212741983328542761  
 
-    # Log Unban
+    
     if guild.me.guild_permissions.view_audit_log:
         async for entry in guild.audit_logs(limit=1, action=discord.AuditLogAction.unban):
             if entry.target == user:
@@ -59,9 +59,9 @@ async def on_member_unban(guild, user):
 
 @bot.event
 async def on_member_update(before, after):
-    mod_log_channel_id = 1212741983328542761  # Replace with your mod-log channel ID
+    mod_log_channel_id = 1212741983328542761 
 
-    # Log Mute
+    
     if not before.guild.me.guild_permissions.view_audit_log:
         return
 
@@ -78,5 +78,4 @@ async def on_member_update(before, after):
             await mod_log_channel.send(log_message)
             break
 
-# Run the bot with your token
 bot.run('MTIxMjc0MDMzNTU5NjMzOTIwMA.G4w1uD.tmYaSvE0i5VkQ3MShaSemvua32nNmzoYoOCRx0')
