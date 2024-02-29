@@ -1,2 +1,2 @@
-# log-bot
+# Log-Bot
 Bot that auto logs moderator actions
