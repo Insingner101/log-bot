@@ -91,5 +91,5 @@ async def on_member_update(before, after):
 
             await mod_log_channel.send(log_message)
             break
-
+#Replace without your token
 bot.run('MTIxMjc0MDMzNTU5NjMzOTIwMA.G4w1uD.tmYaSvE0i5VkQ3MShaSemvua32nNmzoYoOCRx0')
