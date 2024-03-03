@@ -24,7 +24,7 @@ async def on_ready():
 
 @bot.event
 async def on_member_remove(member):
-    mod_log_channel_id = 1212741983328542761
+    mod_log_channel_id = 12127419833285
     mod_log_channel = bot.get_channel(mod_log_channel_id)
 
     if member.guild.me.guild_permissions.view_audit_log:
@@ -40,7 +40,7 @@ async def on_member_remove(member):
 
 @bot.event
 async def on_member_ban(guild, user):
-    mod_log_channel_id = 1212741983328542761
+    mod_log_channel_id = 12127419833285
     mod_log_channel = bot.get_channel(mod_log_channel_id)
 
     if guild.me.guild_permissions.view_audit_log:
@@ -56,7 +56,7 @@ async def on_member_ban(guild, user):
 
 @bot.event
 async def on_member_unban(guild, user):
-    mod_log_channel_id = 1212741983328542761
+    mod_log_channel_id = 12127419833285
     mod_log_channel = bot.get_channel(mod_log_channel_id)
 
     if guild.me.guild_permissions.view_audit_log:
@@ -72,7 +72,7 @@ async def on_member_unban(guild, user):
 
 @bot.event
 async def on_member_update(before, after):
-    mod_log_channel_id = 1212741983328542761
+    mod_log_channel_id = 12127419833285
     mod_log_channel = bot.get_channel(mod_log_channel_id)
 
     if not before.guild.me.guild_permissions.view_audit_log:
